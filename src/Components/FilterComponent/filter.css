@@ -1,0 +1,21 @@
+.FilterComponent{
+    width:20%;
+    border-right: 1px solid grey;
+    text-align: center;
+    
+}
+.FilterComponent div{
+    color:grey;
+}
+.FilterComponent select{
+    border:none;
+    outline:none;
+    background: inherit;
+    font-size: 20px;
+    font-weight: 600;
+}
+.FilterComponent option{
+    font-size: 18px;
+    border:none;
+    outline: none;
+}
