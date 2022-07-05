@@ -1,12 +1,16 @@
 import React from "react";
 import "./filter.css"
-const FilterComponent = ({ name, array }) => {
+const FilterComponent = ({title, name, array,value,handleChange }) => {
     return (
         <div className="FilterComponent">
-            <div>{name}</div>
-            <select>
+            <div>{title}</div>
+            <select name={name} value ={value} onChange={(event)=>handleChange(event)} >
                 {array.map(item => {
-                    return <option key={item} value={item}>{item}</option>
+                    return (
+                    <option key={item} value={item} >
+                        {item}
+                    </option>
+                    )
                 })}
             </select>
         </div>

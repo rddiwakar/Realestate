@@ -15,7 +15,13 @@ import scotthouse from "../Assets/scott-webb-1ddol8rgUH8-unsplash.jpg";
 import solenapartment from "../Assets/solen-feyissa-KUYZJUcviI4-unsplash.jpg";
 import stephenmansion from "../Assets/stephen-leonardi-XKIO6ZgCObo-unsplash.jpg";
 import toddhouse from "../Assets/todd-kent-178j8tJrNlc-unsplash.jpg";
-import vuanhhouse from "../Assets/vu-anh-TiVPTYCG_3E-unsplash.jpg"
+import vuanhhouse from "../Assets/vu-anh-TiVPTYCG_3E-unsplash.jpg";
+
+
+let locationarray = ["All","Delhi","Noida"];
+let priceArray = ["All","$0-500","$500-2500", "$2500-Above"];
+let properyTypeArray = ["All","House","Apartment","Mansion"];
+
 const dummyData = [
     {
         id: uuid(),
@@ -146,4 +152,4 @@ const dummyData = [
         url:fabianmansion
     },
 ]
-export {dummyData}
+export {dummyData, locationarray,priceArray,properyTypeArray}
