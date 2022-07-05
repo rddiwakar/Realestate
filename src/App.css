@@ -28,3 +28,25 @@
   cursor: pointer;
   padding: 0 10px;
 }
+
+@media only screen and (max-width: 800px) {
+  .app-header{
+    display: block;
+  }
+  .app-header div{
+    padding-bottom: 10px;
+  }
+  .app-header input{
+    width: 200px;
+    height:30px;
+  }
+  .filterSection{
+    width:40%;
+    display:block;
+    border: none;
+  }
+  .filterSection button{
+    padding:5px 10px;
+
+  }
+}

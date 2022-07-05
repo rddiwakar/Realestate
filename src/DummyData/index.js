@@ -19,7 +19,7 @@ import vuanhhouse from "../Assets/vu-anh-TiVPTYCG_3E-unsplash.jpg";
 
 
 let locationarray = ["All","Delhi","Noida"];
-let priceArray = ["All","$0-500","$500-2500", "$2500-Above"];
+let priceArray = ["All","$0-500","$500-2500", "$2500-above"];
 let properyTypeArray = ["All","House","Apartment","Mansion"];
 
 const dummyData = [
