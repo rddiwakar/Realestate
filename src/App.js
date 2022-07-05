@@ -3,7 +3,7 @@ import './App.css';
 import { FilterComponent } from "./Components/FilterComponent/filterComponent"
 import { CardsWrapper } from "./Components/CardWrapper/cardWrapper";
 import { dummyData, locationarray, priceArray, properyTypeArray } from "./DummyData/index"
-
+import { RiSearchLine as SearchIcon } from "react-icons/ri";
 function App() {
 
   // State 
@@ -14,16 +14,16 @@ function App() {
     type: "All",
     when: "All"
   })
-  const [input,setInput]= useState("");
+  const [input, setInput] = useState("");
 
   // useEffect use 
-  useEffect(()=>{
-    setData(dummyData.filter(item => item.name.toLowerCase().startsWith(input)))
-  },[input])
+  useEffect(() => {
+    setData(dummyData.filter(item => item.name.toLowerCase().startsWith(input.toLowerCase())))
+  }, [input])
 
-  useEffect(()=>{
+  useEffect(() => {
     setData(dummyData)
-  },[])
+  }, [])
 
   // handleChange made
   const handleInput = (event) => {
@@ -48,7 +48,7 @@ function App() {
           return filterData.type.toLowerCase() === item.properyType.toLowerCase()
         }
       })
-      
+
       .filter(item => {
         if (filterData.location === "All") {
           return item
@@ -67,14 +67,19 @@ function App() {
           return item.price >= 2500
         }
       })
-      setData(newdata)
+    setData(newdata)
   }
   return (
     <div className="App">
+
       <div className='app-header'>
         <div>Search properties for rent</div>
-        <input placeholder='search here' value={input} onChange={(event)=>handleInput(event)} />
+        <div className="searchSection">
+          <SearchIcon className="searchicon" />
+          <input placeholder='search here' value={input} onChange={(event) => handleInput(event)} />
+        </div>
       </div>
+
       <div className='filterSection'>
         <FilterComponent
           title="Location"
@@ -104,11 +109,13 @@ function App() {
           value={filterData.type}
           handleChange={handleChange}
         />
-        <button onClick={(event)=>handleSubmit(event)}>Search</button>
+        <button onClick={(event) => handleSubmit(event)}>Search</button>
       </div>
+
       <div>
         <CardsWrapper array={data} />
       </div>
+
     </div>
   );
 }

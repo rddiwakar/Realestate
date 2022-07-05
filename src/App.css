@@ -13,6 +13,17 @@
   font-size: 24px;
   font-weight: 600;
 }
+.searchSection{
+  position: relative;
+}
+.searchicon{
+  position: absolute;
+  top:5px;
+  left:10px;
+}
+.app-header .searchSection input{
+  padding: 8px 00px 8px 40px;
+}
 .filterSection{
   padding:10px 20px;
   display: flex;
@@ -36,9 +47,10 @@
   .app-header div{
     padding-bottom: 10px;
   }
-  .app-header input{
+  .app-header .searchSection  input{
     width: 200px;
     height:30px;
+    font-size: 16px;
   }
   .filterSection{
     width:40%;
@@ -47,6 +59,9 @@
   }
   .filterSection button{
     padding:5px 10px;
-
+  }
+  .searchicon{
+    top:12px;
+    left:10px;
   }
 }
