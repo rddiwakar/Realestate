@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import './App.css';
 import { FilterComponent } from "./Components/FilterComponent/filterComponent"
 import { CardsWrapper } from "./Components/CardWrapper/cardWrapper";
-import { dummyData, locationarray, priceArray, properyTypeArray } from "./DummyData/index"
+import { dummyData, locationarray, priceArray, properyTypeArray, whenArray } from "./DummyData/index"
 import { RiSearchLine as SearchIcon } from "react-icons/ri";
 import {GiHamburgerMenu as HemburgerIcon} from "react-icons/gi";
 function App() {
@@ -76,10 +76,22 @@ function App() {
           return item.price >= 2500
         }
       })
+      .filter(item => {
+        if (filterData.when === "All") {
+          return item
+        } else if (filterData.when === "1980-2000") {
+          return item.made < 2000
+        } else if (filterData.when === "2000-2010") {
+          return item.made < 2010 && item.made >= 2000
+        } else {
+          return item.made >= 2010
+        }
+      })
     setData(newdata)
   }
   return (
     <div className="App">
+      {/* header section */}
 
       <div className='app-header'>
         <div>Search properties for rent</div>
@@ -89,6 +101,7 @@ function App() {
         </div>
       </div>
 
+      {/* filter section */}
       {mobileDisplay && <HemburgerIcon style={{cursor:"pointer"}}  onClick={()=>setDisplay(!display)}/>}
 
       <div className='filterSection' style={{display:mobileDisplay ?(display ? "block":"none"): "flex" }}>
@@ -103,7 +116,7 @@ function App() {
         <FilterComponent
           title="When"
           name="when"
-          array={locationarray}
+          array={whenArray}
           value={filterData.when}
           handleChange={handleChange}
         />
@@ -123,6 +136,7 @@ function App() {
         />
         <button onClick={(event) => handleSubmit(event)}>Search</button>
       </div>
+      {/* cards section */}
       <CardsWrapper array={data} />
     </div>
   );

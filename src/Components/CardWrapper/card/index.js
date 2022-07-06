@@ -1,7 +1,7 @@
 import "./index.css"
 import {FiHeart as HeartIcon} from "react-icons/fi"
 const Card = ({detail})=>{
-    const {price,url,name,location} = detail;
+    const {price,url,name,location,made} = detail;
     return (
         <div className="Card">
             <img src={url} alt={name} />
@@ -11,6 +11,7 @@ const Card = ({detail})=>{
                     <HeartIcon color="red" size="20px"/>
                 </div>
                 <h2>{name}</h2>
+                <p style={{color:"violet", fontSize:"12px"}}>Made in {made}</p>
                 <p style={{color:"grey"}}>L-42,Lajpat Nagar,{location}</p>
                 <h3>India</h3>
             </div>

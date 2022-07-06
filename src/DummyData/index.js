@@ -21,15 +21,61 @@ import vuanhhouse from "../Assets/vu-anh-TiVPTYCG_3E-unsplash.jpg";
 let locationarray = ["All","Delhi","Noida"];
 let priceArray = ["All","$0-500","$500-2500", "$2500-above"];
 let properyTypeArray = ["All","House","Apartment","Mansion"];
-
+let whenArray=['All','1980-2000','2000-2010','2010-now']
 const dummyData = [
+    {
+        id: uuid(),
+        name:"Raj Babani house",
+        properyType:"house",
+        price: 2100,
+        location:"delhi",
+        url: philhouse,
+        made: 2017,
+    },
+    {
+        id: uuid(),
+        name:"Naomi apartment",
+        properyType:"apartment",
+        price:499,
+        location:"delhi",
+        url: naomiapartment,
+        made: 2009,
+    }, 
+    {
+        id: uuid(),
+        name:"Naomi house",
+        properyType:"house",
+        price:499,
+        location:"delhi",
+        url: naomiapartment,
+        made: 2017,
+    },  
+    {
+        id: uuid(),
+        name:"Solen house",
+        properyType:"house",
+        price:495,
+        location:"delhi",
+        url: solenapartment,
+        made: 2007
+    },
+    {
+        id: uuid(),
+        name:"Ling Chu house",
+        properyType:"house",
+        price:499,
+        location:"delhi",
+        url: patrickapartment,
+        made: 1986
+    },
     {
         id: uuid(),
         name:"Vu Anh house",
         properyType:"house",
         price:2400,
         location:"delhi",
-        url: vuanhhouse
+        url: vuanhhouse,
+        made: 1986
     },
     {
         id: uuid(),
@@ -37,7 +83,8 @@ const dummyData = [
         properyType:"house",
         price:1800,
         location:"delhi",
-        url: toddhouse
+        url: toddhouse,
+        made: 1999
     },
     {
         id: uuid(),
@@ -45,7 +92,8 @@ const dummyData = [
         properyType:"mansion",
         price:1900,
         location:"delhi",
-        url: stephenmansion
+        url: stephenmansion,
+        made: 2000
     },
     {
         id: uuid(),
@@ -53,7 +101,8 @@ const dummyData = [
         properyType:"apartment",
         price:1900,
         location:"delhi",
-        url: solenapartment
+        url: solenapartment,
+        made: 2004
     },
     {
         id: uuid(),
@@ -61,7 +110,8 @@ const dummyData = [
         properyType:"house",
         price:1900,
         location:"delhi",
-        url: scotthouse
+        url: scotthouse,
+        made:2003
     },
     {
         id: uuid(),
@@ -69,7 +119,8 @@ const dummyData = [
         properyType:"house",
         price:1900,
         location:"delhi",
-        url: ralphhouse
+        url: ralphhouse,
+        made: 2010
     },
     {
         id: uuid(),
@@ -77,7 +128,8 @@ const dummyData = [
         properyType:"house",
         price:900,
         location:"delhi",
-        url: rarhouse
+        url: rarhouse,
+        made: 2012
     },
     {
         id: uuid(),
@@ -85,7 +137,8 @@ const dummyData = [
         properyType:"house",
         price:600,
         location:"delhi",
-        url: philhouse
+        url: philhouse,
+        made: 2007
     },
     {
         id: uuid(),
@@ -93,7 +146,8 @@ const dummyData = [
         properyType:"apartment",
         price:600,
         location:"delhi",
-        url: patrickapartment
+        url: patrickapartment,
+        made:1990
     },
     {
         id: uuid(),
@@ -101,7 +155,8 @@ const dummyData = [
         properyType:"mansion",
         price:2399,
         location:"noida",
-        url: nickmansion
+        url: nickmansion,
+        made: 2003
     },
     {
         id: uuid(),
@@ -109,7 +164,8 @@ const dummyData = [
         properyType:"apartment",
         price:499,
         location:"noida",
-        url: nathanapartment
+        url: nathanapartment,
+        made: 2017
     },
     {
         id: uuid(),
@@ -117,7 +173,8 @@ const dummyData = [
         properyType:"apartment",
         price:499,
         location:"noida",
-        url: naomiapartment
+        url: naomiapartment,
+        made:2009
     },
     {
         id: uuid(),
@@ -125,7 +182,8 @@ const dummyData = [
         properyType:"house",
         price:1600,
         location:"noida",
-        url:johnsonhouse
+        url:johnsonhouse,
+        made:2021
     },
     {
         id: uuid(),
@@ -133,7 +191,8 @@ const dummyData = [
         properyType:"apartment",
         price:400,
         location:"Delhi",
-        url:francescaapartment
+        url:francescaapartment,
+        made:1992
     },
     {
         id: uuid(),
@@ -141,7 +200,8 @@ const dummyData = [
         properyType:"mansion",
         price:2400,
         location:"noida",
-        url:danielmansion
+        url:danielmansion,
+        made:2002
     },
     {
         id: uuid(),
@@ -149,7 +209,8 @@ const dummyData = [
         properyType:"mansion",
         price: 2700,
         location:"Delhi",
-        url:fabianmansion
+        url:fabianmansion,
+        made:2017
     },
 ]
-export {dummyData, locationarray,priceArray,properyTypeArray}
+export {dummyData, locationarray,priceArray,properyTypeArray,whenArray}
