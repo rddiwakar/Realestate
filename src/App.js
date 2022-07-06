@@ -4,6 +4,7 @@ import { FilterComponent } from "./Components/FilterComponent/filterComponent"
 import { CardsWrapper } from "./Components/CardWrapper/cardWrapper";
 import { dummyData, locationarray, priceArray, properyTypeArray } from "./DummyData/index"
 import { RiSearchLine as SearchIcon } from "react-icons/ri";
+import {GiHamburgerMenu as HemburgerIcon} from "react-icons/gi";
 function App() {
 
   // State 
@@ -15,6 +16,8 @@ function App() {
     when: "All"
   })
   const [input, setInput] = useState("");
+  const [display,setDisplay] = useState(false);
+  const [mobileDisplay,setMobileDisplay] = useState(false);
 
   // useEffect use 
   useEffect(() => {
@@ -25,10 +28,16 @@ function App() {
     setData(dummyData)
   }, [])
 
+  useState(()=>{
+    const width = window.innerWidth;
+    width <= 800 ? setMobileDisplay(true): setMobileDisplay(false);
+  },[])
+
   // handleChange made
   const handleInput = (event) => {
     setInput(event.target.value)
   }
+  
   const handleChange = (event) => {
     const name = event.target.name
     setFilterData({
@@ -80,7 +89,10 @@ function App() {
         </div>
       </div>
 
-      <div className='filterSection'>
+      {mobileDisplay && <HemburgerIcon style={{cursor:"pointer"}}  onClick={()=>setDisplay(!display)}/>}
+
+      <div className='filterSection' style={{display:mobileDisplay ?(display ? "block":"none"): "flex" }}>
+
         <FilterComponent
           title="Location"
           name="location"
