@@ -15,3 +15,14 @@
 .Card .card-detail span{
     color:blueviolet;
 }
+@media only screen and (max-width: 800px) {
+    .Card{
+        width:90%;
+        margin-bottom: 10px; 
+        margin-right: 20px;  
+    }
+    .Card img{
+        width:100%;
+        border-radius: 10px;
+    }
+}

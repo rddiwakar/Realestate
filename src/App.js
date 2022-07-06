@@ -123,11 +123,7 @@ function App() {
         />
         <button onClick={(event) => handleSubmit(event)}>Search</button>
       </div>
-
-      <div>
-        <CardsWrapper array={data} />
-      </div>
-
+      <CardsWrapper array={data} />
     </div>
   );
 }
